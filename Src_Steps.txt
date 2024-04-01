@@ -1,0 +1,17 @@
+Followed the below steps to build the Hermes App, 
+ 
+1) cd $ROOT //PM-04H-Display 
+2) cd apps 
+3) git clone https://github.com/HED-Inc/CL-713-Hermes.git 
+4) echo "cl-713-hermes" >> build-order  // should match with above clone folder 
+(mv CL-713-Hermes/ cl-713-hermes)
+5) cd $ROOT 
+6) make clean_apps  
+7) make apps  // create the tar and md5 for Hermes App at apps/CL-713-Hermes 
+8) cp apps/cl-713-hermes/hermes-1.0.0.tar.gz apps/cl-713-hermes/hermes-1.0.0.tar.gz.md5 source/ 
+9) cd build   
+10) make hermes-dirclean  
+11) make hermes 
+12) make release_update HELDK_RELEASE="$CUSTOM_PATH"
+(make release_update HELDK_RELEASE=/home/admin/Public/nirav_hed/next_eic_nirav/) 
+ 
